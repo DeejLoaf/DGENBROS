@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 10 Monthly Wagerers</title>
+    <link rel="stylesheet" href="style.css"> <!-- Make sure this path is correct -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+
+        .leaderboard {
+            width: 90%;
+            max-width: 600px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            margin: 20px auto;
+            padding: 10px;
+        }
+
+        .leaderboard h2 {
+            background-color: #4CAF50;
+            color: white;
+            margin: 0;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .leaderboard table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .leaderboard th, .leaderboard td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .leaderboard tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .leaderboard th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        .header-background {
+            background-image: url('https://raw.githubusercontent.com/DeejLoaf/DGENBROS/5c0951923b36e4d54324b13eb1462973e023e026/leaderboardpic.png');
+            background-size: cover; /* Ensures the image covers the entire header */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            height: 100px; /* Adjust the height as needed */
+        }
+
+        @media (max-width: 600px) {
+            .leaderboard {
+                width: 100%;
+            }
+            .leaderboard h2 {
+                font-size: 1.2rem;
+            }
+            .leaderboard th, .leaderboard td {
+                padding: 8px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .leaderboard h2 {
+                font-size: 1rem;
+                padding: 10px;
+            }
+            .leaderboard th, .leaderboard td {
+                padding: 6px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="leaderboard">
+        <h2>Top 10 Monthly Wagerers</h2>
+        <table id="leaderboardTable">
+            <thead class="header-background">
+                <tr>
+                    <th>Rank</th>
+                    <th>Username</th>
+                    <th>Monthly Wager</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be populated by JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="sherbetleaderboard.js"></script> <!-- Make sure this path is correct -->
+</body>
+</html>
