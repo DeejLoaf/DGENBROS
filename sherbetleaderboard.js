@@ -1,5 +1,5 @@
 // Define the API URL
-const apiUrl = 'https://csgobig.com/api/partners/getRefDetails/Sav21faqfaslkhafsa?from=1672534861000&to=1702383132000';
+const apiUrl = 'https://api.allorigins.win/get?url=https%3A//csgobig.com/api/partners/getRefDetails/Sav21faqfaslkhafsa%3Ffrom%3D1672534861000%26to%3D1702383132000';
 
 async function fetchAndDisplayLeaderboard() {
     try {
