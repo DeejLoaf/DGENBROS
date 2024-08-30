@@ -3,7 +3,7 @@ const apiUrl = 'https://csgobig.com/api/partners/getRefDetails/Sav21faqfaslkhafs
 
 async function fetchAndDisplayLeaderboard() {
     try {
-        // Fetch the data from the API using the proxy
+        // Fetch the data from the API
         const response = await fetch(apiUrl);
 
         if (!response.ok) {
@@ -15,13 +15,12 @@ async function fetchAndDisplayLeaderboard() {
 
         console.log('API Response:', data); // Log the entire API response for debugging
 
-        // Check if 'results' exists and is an array
+        // Validate data structure
         if (!data.results || !Array.isArray(data.results)) {
             console.error('Invalid data structure:', data);
             throw new Error('Invalid data structure: "results" is undefined or not an array');
         }
 
-        // Check the structure of the first item to ensure it has the expected properties
         if (data.results.length > 0) {
             const firstItem = data.results[0];
             if (typeof firstItem.name === 'undefined' || typeof firstItem.wagerTotal === 'undefined') {
@@ -30,7 +29,7 @@ async function fetchAndDisplayLeaderboard() {
             }
         }
 
-        // Map the data to extract the necessary fields
+        // Extract the necessary fields
         const users = data.results.map(user => ({
             username: user.name,
             totalWager: user.wagerTotal
