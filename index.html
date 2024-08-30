@@ -25,9 +25,9 @@
 
         .leaderboard h2 {
             background-image: url('https://github.com/DeejLoaf/DGENBROS/blob/main/leaderboardpic.png?raw=true');
-            background-size: cover; /* Ensures the image covers the entire header */
-            background-position: center; /* Centers the image */
-            background-repeat: no-repeat; /* Prevents the image from repeating */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             color: hotpink;
             margin: 0;
             padding: 62px;
@@ -113,33 +113,7 @@
         </table>
     </div>
 
-    <script src="https://github.com/DeejLoaf/DGENBROS/blob/8a1408c9daa20cdf3018d71a34c67138660dfdba/sherbetleaderboard.js"></script>
-    <script>
-        // Example data
-        const data = [
-            { rank: 1, username: 'User1', wager: '$1000', prize: '$100' },
-            { rank: 2, username: 'User2', wager: '$900', prize: '$90' },
-            { rank: 3, username: 'User3', wager: '$800', prize: '$80' },
-            { rank: 4, username: 'User4', wager: '$700', prize: '$70' },
-            { rank: 5, username: 'User5', wager: '$600', prize: '$60' },
-            { rank: 6, username: 'User6', wager: '$500', prize: '$50' },
-            { rank: 7, username: 'User7', wager: '$400', prize: '$40' },
-            { rank: 8, username: 'User8', wager: '$300', prize: '$30' },
-            { rank: 9, username: 'User9', wager: '$200', prize: '$20' },
-            { rank: 10, username: 'User10', wager: '$100', prize: '$10' }
-        ];
-
-        const tbody = document.querySelector('#leaderboardTable tbody');
-        data.forEach(item => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${item.rank}</td>
-                <td>${item.username}</td>
-                <td>${item.wager}</td>
-                <td>${item.prize}</td> <!-- New column data -->
-            `;
-            tbody.appendChild(row);
-        });
-    </script>
+    <!-- Use the raw content URL to load the JavaScript -->
+    <script src="https://raw.githubusercontent.com/DeejLoaf/DGENBROS/8a1408c9daa20cdf3018d71a34c67138660dfdba/sherbetleaderboard.js"></script>
 </body>
 </html>
