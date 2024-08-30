@@ -4,21 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Top 10 Monthly Wagerers</title>
-    <link rel="stylesheet" href="style.css"> <!-- Make sure this path is correct -->
     <style>
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            background-color: #000000;
             margin: 0;
-            background-color: #f4f4f9;
+            padding: 0;
         }
 
         .leaderboard {
-            width: 90%;
-            max-width: 600px;
+            width: 95%;
+            max-width: 800px;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -28,11 +24,29 @@
         }
 
         .leaderboard h2 {
-            background-color: #4CAF50;
-            color: white;
+            background-image: url('https://github.com/DeejLoaf/DGENBROS/blob/main/leaderboardpic.png?raw=true');
+            background-size: cover; /* Ensures the image covers the entire header */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            color: hotpink;
             margin: 0;
-            padding: 15px;
+            padding: 62px;
             text-align: center;
+            position: relative;
+        }
+
+        .leaderboard h2::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.1); /* Optional: Add a semi-transparent overlay */
+        }
+
+        .leaderboard h2 span {
+            visibility: hidden; /* Hides the text */
         }
 
         .leaderboard table {
@@ -44,6 +58,7 @@
             padding: 12px;
             text-align: left;
             border-bottom: 1px solid #ddd;
+            color: black; /* Set text color to black */
         }
 
         .leaderboard tr:hover {
@@ -53,14 +68,6 @@
         .leaderboard th {
             background-color: #f2f2f2;
             font-weight: bold;
-        }
-
-        .header-background {
-            background-image: url('https://raw.githubusercontent.com/DeejLoaf/DGENBROS/5c0951923b36e4d54324b13eb1462973e023e026/leaderboardpic.png');
-            background-size: cover; /* Ensures the image covers the entire header */
-            background-position: center; /* Centers the image */
-            background-repeat: no-repeat; /* Prevents the image from repeating */
-            height: 100px; /* Adjust the height as needed */
         }
 
         @media (max-width: 600px) {
@@ -90,14 +97,14 @@
 </head>
 <body>
     <div class="leaderboard">
-        <h2>Top 10 Monthly Wagerers</h2>
+        <h2><span>Top 10 Monthly Wagerers</span></h2>
         <table id="leaderboardTable">
-            <thead class="header-background">
+            <thead>
                 <tr>
                     <th>Rank</th>
                     <th>Username</th>
                     <th>Monthly Wager</th>
-                    <th>Prizes</th>
+                    <th>Prize</th> <!-- New column header -->
                 </tr>
             </thead>
             <tbody>
@@ -106,6 +113,33 @@
         </table>
     </div>
 
-    <script src="sherbetleaderboard.js"></script> <!-- Make sure this path is correct -->
+    <script src="https://github.com/DeejLoaf/DGENBROS/blob/8a1408c9daa20cdf3018d71a34c67138660dfdba/sherbetleaderboard.js"></script>
+    <script>
+        // Example data
+        const data = [
+            { rank: 1, username: 'User1', wager: '$1000', prize: '$100' },
+            { rank: 2, username: 'User2', wager: '$900', prize: '$90' },
+            { rank: 3, username: 'User3', wager: '$800', prize: '$80' },
+            { rank: 4, username: 'User4', wager: '$700', prize: '$70' },
+            { rank: 5, username: 'User5', wager: '$600', prize: '$60' },
+            { rank: 6, username: 'User6', wager: '$500', prize: '$50' },
+            { rank: 7, username: 'User7', wager: '$400', prize: '$40' },
+            { rank: 8, username: 'User8', wager: '$300', prize: '$30' },
+            { rank: 9, username: 'User9', wager: '$200', prize: '$20' },
+            { rank: 10, username: 'User10', wager: '$100', prize: '$10' }
+        ];
+
+        const tbody = document.querySelector('#leaderboardTable tbody');
+        data.forEach(item => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${item.rank}</td>
+                <td>${item.username}</td>
+                <td>${item.wager}</td>
+                <td>${item.prize}</td> <!-- New column data -->
+            `;
+            tbody.appendChild(row);
+        });
+    </script>
 </body>
 </html>
