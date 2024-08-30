@@ -25,14 +25,17 @@
 
         .leaderboard h2 {
             background-image: url('https://github.com/DeejLoaf/DGENBROS/blob/main/leaderboardpic.png?raw=true');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            background-size: cover; /* Ensures the image covers the entire header */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
             color: hotpink;
             margin: 0;
-            padding: 62px;
             text-align: center;
             position: relative;
+            height: 20vh; /* Sets height to 20% of the viewport height */
+            display: flex; /* Centers text vertically */
+            align-items: center; /* Centers text vertically */
+            justify-content: center; /* Centers text horizontally */
         }
 
         .leaderboard h2::after {
@@ -75,6 +78,7 @@
                 width: 100%;
             }
             .leaderboard h2 {
+                height: 25vh; /* Adjust height on smaller screens */
                 font-size: 1.2rem;
             }
             .leaderboard th, .leaderboard td {
@@ -85,6 +89,7 @@
 
         @media (max-width: 400px) {
             .leaderboard h2 {
+                height: 30vh; /* Further adjust height on very small screens */
                 font-size: 1rem;
                 padding: 10px;
             }
@@ -113,7 +118,7 @@
         </table>
     </div>
 
-    <!-- Use the raw content URL to load the JavaScript -->
-    <script src="sherbetleaderboard.js"></script>
+    <script src="https://github.com/DeejLoaf/DGENBROS/blob/8a1408c9daa20cdf3018d71a34c67138660dfdba/sherbetleaderboard.js"></script>
 </body>
 </html>
+
