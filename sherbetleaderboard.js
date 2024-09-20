@@ -15,7 +15,12 @@ async function fetchAndDisplayLeaderboard() {
             }
         });
 
+        // Log the full response object to inspect status and headers
+        console.log('Full response:', response);
+
         if (!response.ok) {
+            // Log the status and statusText for more details about the error
+            console.error(`Error: Status ${response.status}, ${response.statusText}`);
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
