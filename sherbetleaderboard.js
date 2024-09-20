@@ -1,17 +1,25 @@
 // Define the API URL
-const apiUrl = 'https://api.allorigins.win/get?url=https%3A//csgobig.com/api/partners/getRefDetails/Sav21faqfaslkhafsa%3Ffrom%3D1672534861000%26to%3D1702383132000';
+const apiUrl = 'https://exec.sherbet.com/affiliates/dgenbros/wagers?startDate=2024-09-01';
+
+// Authentication token
+const authToken = '3ba4f227b1e9de1fef23a7d2825d6270';
 
 async function fetchAndDisplayLeaderboard() {
     try {
-        // Fetch the data from the API
-        const response = await fetch(apiUrl);
+        // Fetch the data from the API with authentication headers
+        const response = await fetch(apiUrl, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${authToken}`,
+                'Content-Type': 'application/json'
+            }
+        });
 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        const responseData = await response.json();
-        const data = JSON.parse(responseData.contents);
+        const data = await response.json();
 
         console.log('API Response:', data); // Log the entire API response for debugging
 
